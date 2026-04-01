@@ -1,4 +1,3 @@
-{% import 'util_macros.sql' as macros %}
 {%- set partition_col     = "__modified_date" -%}
 {%- set interval          = 99 -%}
 {%- set interval_type     = "years" -%}
