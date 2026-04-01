@@ -7,8 +7,6 @@ models:
     data_type: string
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: system_code
@@ -16,8 +14,6 @@ models:
     data_type: string
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: reporting_date
@@ -25,8 +21,6 @@ models:
     data_type: date
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: asset_name
@@ -34,8 +28,6 @@ models:
     data_type: string
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: hole_id
@@ -43,8 +35,6 @@ models:
     data_type: string
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: hole_name
@@ -52,8 +42,6 @@ models:
     data_type: string
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: block
@@ -61,8 +49,6 @@ models:
     data_type: string
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: start_time_drilling
@@ -70,8 +56,6 @@ models:
     data_type: timestamp
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: end_time_drilling
@@ -79,8 +63,6 @@ models:
     data_type: timestamp
     constraints:
     - type: not_null
-    meta:
-      is_pk: true
     tests:
     - not_null
   - name: site_name
