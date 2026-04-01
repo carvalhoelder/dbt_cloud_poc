@@ -1,3 +1,4 @@
+{% import 'util_macros.sql' as macros %}
 {%- set partition_col     = "__modified_date" -%}
 {%- set interval          = 99 -%}
 {%- set interval_type     = "years" -%}
@@ -47,7 +48,7 @@ select
   bd.block,
   bd.site_name, 
   bd.source_system_name,
-  "N" AS _is_dbt,
+  "S" AS _is_dbt,
   {{add_tech_columns(this)}}
 from block_data AS bd
 JOIN group_aadp_l3_l4_{{var('env')}}.staging_l3.man_site_lookup AS sl
