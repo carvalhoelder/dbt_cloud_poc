@@ -1,0 +1,77 @@
+version: 2
+models:
+- name: hole
+  columns:
+  - name: site_code
+    description: 'site_code: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: system_code
+    description: 'system_code: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: hole_id
+    description: 'hole_id: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: hole_name
+    description: 'hole_name: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: block
+    description: 'block: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: site_name
+    description: 'site_name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: source_system_name
+    description: 'source_system_name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  description: 'Hole (from ER/Studio model `D3 - CDP L3-L4 LDM.DM1`): DEFINITION MISSING!'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - site_code
+    - system_code
+    - hole_id
+    - hole_name
+    - block
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

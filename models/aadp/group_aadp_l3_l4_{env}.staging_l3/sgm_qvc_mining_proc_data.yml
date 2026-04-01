@@ -1,0 +1,75 @@
+version: 2
+models:
+- name: sgm_qvc_mining_proc_data
+  columns:
+  - name: sgm_qvc_mining_proc_data_sk
+    description: 'Sgm Qvc Mining Processing Data Key: The unique identifier for the
+      Sgm Qvc Mining Processing Data in this system.  This is a surrogate key and
+      no meaning should be inferred from the content, although it may be used as a
+      sort key to provide a natural sort order for the Sgm Qvc Mining Processing Data.'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: source_table_name
+    description: 'Source Table Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: source_system_name
+    description: 'Source System Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: site_name
+    description: 'Site Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: reporting_date_month
+    description: 'Reporting Date Month: DEFINITION MISSING!'
+    data_type: date
+    tests:
+    - not_null
+  - name: asset_code
+    description: 'Asset Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: kda
+    description: 'KDA: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: material_code
+    description: 'Material Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: measure_name
+    description: 'Measure Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: measure_code
+    description: 'Measure Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: measure_value
+    description: 'Measure Value: DEFINITION MISSING!'
+    data_type: decimal(18,4)
+  description: 'Sgm Qvc Mining Processing Data (from ER/Studio model `D3 - CDP Tactical.DM1`):
+    A table contains the data for SGM QVC.'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - sgm_qvc_mining_proc_data_sk
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

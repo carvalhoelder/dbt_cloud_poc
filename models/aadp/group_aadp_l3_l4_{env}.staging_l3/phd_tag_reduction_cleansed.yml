@@ -1,0 +1,93 @@
+version: 2
+models:
+- name: phd_tag_reduction_cleansed
+  columns:
+  - name: phd_tag_reduction_cleansed_sk
+    description: 'PHD TAG Reduction Cleansed Key: The unique identifier for the PHD
+      TAG Reduction Cleansed in this system.  This is a surrogate key and no meaning
+      should be inferred from the content, although it may be used as a sort key to
+      provide a natural sort order for the PHD TAG Reduction Cleansed.'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: site_code
+    description: 'Site Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: system_code
+    description: 'System Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: site_system_shift_date_code
+    description: 'Site System Shift Date Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: dictionary
+    description: 'Dictionary: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: tag_code
+    description: 'Tag Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: aggregation
+    description: 'Aggregation: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: time_scale
+    description: 'Time Scale: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: reporting_date
+    description: 'Reporting Date: DEFINITION MISSING!'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: reading_date_time_utc
+    description: 'Reading Date Time UTC: DEFINITION MISSING!'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: reading_date_time_local
+    description: 'Reading Date Time Local: DEFINITION MISSING!'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: dep1_tag_code
+    description: 'Dependency 1 Tag Code: DEFINITION MISSING!'
+    data_type: string
+  - name: dep2_tag_code
+    description: 'Dependency 2 Tag Code: DEFINITION MISSING!'
+    data_type: string
+  - name: metric_code
+    description: 'Metric Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: tag_value
+    description: 'Tag Value: DEFINITION MISSING!'
+    data_type: double
+    tests:
+    - not_null
+  description: 'PHD TAG Reduction Cleansed (from ER/Studio model `D3 - CDP Process
+    History Database Source.DM1`): DEFINITION MISSING!'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - phd_tag_reduction_cleansed_sk
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

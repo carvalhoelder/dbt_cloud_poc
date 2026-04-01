@@ -1,0 +1,117 @@
+version: 2
+models:
+- name: surface_manager_tum
+  columns:
+  - name: surface_manager_tum_sk
+    description: 'Surface Manager Tum Key: The unique identifier for the Surface Manager
+      TUM in this system.  This is a surrogate key and no meaning should be inferred
+      from the content, although it may be used as a sort key to provide a natural
+      sort order for the Surface Manager TUM.'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: system_code
+    description: 'System Code: The System code of the asset.'
+    data_type: string
+    tests:
+    - not_null
+  - name: site_code
+    description: 'Site Code: The Site name of the asset.'
+    data_type: string
+    tests:
+    - not_null
+  - name: asset_code
+    description: 'Asset Code: The Asset name related with the record.'
+    data_type: string
+    tests:
+    - not_null
+  - name: functional_location_code
+    description: 'Functional Location Code: The Functional Location of the asset.'
+    data_type: string
+    tests:
+    - not_null
+  - name: site_reporting_group_code
+    description: 'Site Reporting Group Code: The Site Reporting group code of the
+      asset.'
+    data_type: string
+    tests:
+    - not_null
+  - name: process_code
+    description: 'Process Code: The Process code related with the asset.'
+    data_type: string
+    tests:
+    - not_null
+  - name: site_system_shift_date_code
+    description: 'Site System Shift Date Code: The System sift code related with the
+      site.'
+    data_type: string
+    tests:
+    - not_null
+  - name: department_code
+    description: 'Department Code: The Department code related with the asset.'
+    data_type: string
+    tests:
+    - not_null
+  - name: scenario_code
+    description: 'Scenario Code: The Scenario code related with the asset.'
+    data_type: string
+    tests:
+    - not_null
+  - name: start_date_time
+    description: 'Start Date Time: The start date/time of an event.'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: end_date_time
+    description: 'End Date Time: The end date/time of an event.'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: local_start_date_time
+    description: 'Local Start Date Time: The local start date/time of an event.'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: local_end_date_time
+    description: 'Local End Date Time: The local end date/time of an event.'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: reason_code
+    description: 'Reason Code: The reason of failure.'
+    data_type: string
+    tests:
+    - not_null
+  - name: duration
+    description: 'Duration: The duration in seconds of the event.'
+    data_type: double
+    tests:
+    - not_null
+  - name: remark_description
+    description: 'Remark Description: DEFINITION MISSING!'
+    data_type: string
+  - name: first_event_flag
+    description: 'First Event Flag: DEFINITION MISSING!'
+    data_type: boolean
+    tests:
+    - not_null
+  - name: is_active
+    description: 'Is Active: DEFINITION MISSING!'
+    data_type: boolean
+    tests:
+    - not_null
+  description: 'Surface Manager TUM (from ER/Studio model `D3 - CDP L3-L4 LDM.DM1`):
+    A Time Usage Model for DOM and Minestar.'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - surface_manager_tum_sk
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

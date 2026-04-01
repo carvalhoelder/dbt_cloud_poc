@@ -1,0 +1,92 @@
+version: 2
+
+sources:
+  - name: cat_minestar_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: cat_minestar
+    tables:
+      - name: vw_cycle
+      - name: vw_cycle_activity_component
+      - name: vw_cycle_delay
+      - name: vw_cycle_s_fact_main
+      - name: vw_delay
+      - name: vw_delayclass
+      - name: vw_operator_shift
+      - name: vw_v_miningblock
+
+  - name: documents_mine_plan_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: documents_mine_plan
+    tables:
+      - name: vw_meta_m_bdgt
+      - name: vw_mineav_drill
+      - name: vw_mineav_haul
+      - name: vw_minemov
+      - name: vw_plant_av
+
+  - name: dynamo_operations_monitoring_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: dynamo_operations_monitoring
+    tables:
+      - name: vw_sp_availability_calc_cache
+      - name: vw_vwdowntimeevents_adicflag
+
+  - name: osisoft_pi_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: osisoft_pi
+    tables:
+      - name: vw_pi_int_data_analytics_v1
+      - name: vw_pi_int_data_analytics_v1_day_5
+      - name: vw_pi_int_data_analytics_v1_day_6
+
+  - name: process_history_database_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: process_history_database
+    tables:
+      - name: vw_sp_reduction
+      - name: vw_sp_reduction_operational
+
+  - name: production_accounting_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: production_accounting
+    tables:
+      - name: vw_log_sheet_data_p
+
+  - name: reconcilor_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: reconcilor
+    tables:
+      - name: vw_sord_data
+
+  - name: surface_manager_l2
+    database: group_aadp_l2_{{var('env','dev')}}
+    schema: surface_manager
+    tables:
+      - name: vw_drill_plan
+      - name: vw_drilled_hole
+      - name: vw_rig
+      - name: vw_rig_delay_code
+      - name: vw_rig_event
+
+##
+  - name: ampla_l2
+    database: group_aadp_l2_{{var('env','dev')}} 
+    schema: ampla  
+    tables:
+      - name: vw_beneficiamento_britagem_britagem_primaria_metricas
+
+  - name: adas_l2
+    database: group_aadp_l2_{{var('env','dev')}}  
+    schema: adas    
+    tables:
+      - name: vw_eventos_classificados
+        columns:
+          - name: eventos_classificados_sk
+            tests:
+              - unique
+
+  - name: staging_l3
+    database: group_aadp_l3_l4_{{var('env','dev')}} 
+    schema: staging_l3
+    tables:
+      - name: man_tactical_lookup

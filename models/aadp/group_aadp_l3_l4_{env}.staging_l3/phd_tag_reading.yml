@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: phd_tag_reading
+  columns:
+  - name: phd_tag_reading_id
+    description: 'PHD Tag Reading Identifier: The unique integer sequence-generated
+      identifier for the PHD Tag Reading in this system.  This is a surrogate key
+      and no meaning should be inferred from the content.'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: source_table_name
+    description: 'Source Table Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: source_system_name
+    description: 'Source System Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: source_site_code
+    description: 'Source Site Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: reading_date_time_utc
+    description: 'Reading Date Time UTC: DEFINITION MISSING!'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: reading_date_time_local
+    description: 'Reading Date/Time Local: DEFINITION MISSING!'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: tag_code
+    description: 'Tag Code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: tag_value
+    description: 'Tag Value: DEFINITION MISSING!'
+    data_type: double
+    tests:
+    - not_null
+  - name: time_scale
+    description: 'Time Scale: DEFINITION MISSING!'
+    data_type: string
+  description: 'PHD Tag Reading (from ER/Studio model `D3 - CDP Process History Database
+    Source.DM1`): DEFINITION MISSING!'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - phd_tag_reading_id
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

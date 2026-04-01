@@ -1,0 +1,115 @@
+version: 2
+models:
+- name: surface_manager_drilling
+  columns:
+  - name: site_name
+    description: 'site_name: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: source_system_name
+    description: 'source_system_name: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: reporting_date
+    description: 'reporting_date: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: asset_name
+    description: 'asset_name: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: hole_id
+    description: 'hole_id: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: hole_name
+    description: 'hole_name: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: block
+    description: 'block: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: start_time_drilling
+    description: 'Start Time Drilling: DEFINITION MISSING!'
+    data_type: timestamp
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: end_time_drilling
+    description: 'End Time Drilling: DEFINITION MISSING!'
+    data_type: timestamp
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: drilled_meters
+    description: 'drilled_meters: DEFINITION MISSING!'
+    data_type: decimal(18,6)
+  description: 'Surface Manager Drilling (from ER/Studio model `D3 - CDP L3-L4 LDM.DM1`):
+    DEFINITION MISSING!'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - site_name
+    - source_system_name
+    - reporting_date
+    - asset_name
+    - hole_id
+    - hole_name
+    - block
+    - start_time_drilling
+    - end_time_drilling
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

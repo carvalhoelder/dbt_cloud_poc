@@ -1,0 +1,280 @@
+version: 2
+models:
+- name: fact_phd_tag_processing_detail
+  columns:
+  - name: system_sk
+    description: 'System Key: The unique integer sequence-generated identifier for
+      the FACT: PHD Tag Processing Detail in this system.  This is a surrogate key
+      and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: site_sk
+    description: 'Site Key: The unique integer sequence-generated identifier for the
+      FACT: PHD Tag Processing Detail in this system.  This is a surrogate key and
+      no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: site_reporting_group_sk
+    description: 'Site Reporting Group Key: The unique integer sequence-generated
+      identifier for the FACT: PHD Tag Processing Detail in this system.  This is
+      a surrogate key and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: date_sk
+    description: 'Date Key: The unique integer sequence-generated identifier for the
+      FACT: PHD Tag Processing Detail in this system.  This is a surrogate key and
+      no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: reporting_period_sk
+    description: 'Reporting Period Key: The unique integer sequence-generated identifier
+      for the FACT: PHD Tag Processing Detail in this system.  This is a surrogate
+      key and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: site_system_shift_date_sk
+    description: 'Site System Shift Date Key: The unique integer sequence-generated
+      identifier for the FACT: PHD Tag Processing Detail in this system.  This is
+      a surrogate key and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: asset_sk
+    description: 'Asset Key: The unique integer sequence-generated identifier for
+      the FACT: PHD Tag Processing Detail in this system.  This is a surrogate key
+      and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: process_sk
+    description: 'Process Key: The unique integer sequence-generated identifier for
+      the FACT: PHD Tag Processing Detail in this system.  This is a surrogate key
+      and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: material_sk
+    description: 'Material Key: The unique integer sequence-generated identifier for
+      the FACT: PHD Tag Processing Detail in this system.  This is a surrogate key
+      and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: scenario_sk
+    description: 'Scenario Key: The unique integer sequence-generated identifier for
+      the FACT: PHD Tag Processing Detail in this system.  This is a surrogate key
+      and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: functional_location_sk
+    description: 'Functional Location Key: The unique integer sequence-generated identifier
+      for the FACT: PHD Tag Processing Detail in this system.  This is a surrogate
+      key and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: department_sk
+    description: 'Department Key: The unique integer sequence-generated identifier
+      for the FACT: PHD Tag Processing Detail in this system.  This is a surrogate
+      key and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: received_dispatched_site_reporting_group_sk
+    description: 'Received Dispatched Site Reporting Group Key: The unique integer
+      sequence-generated identifier for the FACT: PHD Tag Processing Detail in this
+      system.  This is a surrogate key and no meaning should be inferred from the
+      content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: data_indicator_sk
+    description: 'Data Indicator Key: The unique integer sequence-generated identifier
+      for the FACT: PHD Tag Processing Shift in this system.  This is a surrogate
+      key and no meaning should be inferred from the content.'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: tag_code
+    description: 'Tag Code: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: dictionary
+    description: 'Dictionary: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: metric_code
+    description: 'Metric Code: DEFINITION MISSING!'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: reading_date_time_utc
+    description: 'Reading Date Time UTC: DEFINITION MISSING!'
+    data_type: timestamp
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: reading_date_time_local
+    description: 'Reading Date Time Local: DEFINITION MISSING!'
+    data_type: timestamp
+    tests:
+    - not_null
+  - name: tag_kda
+    description: 'Tag KDA: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: aggregation_type
+    description: 'Aggregation Type: DEFINITION MISSING!'
+    data_type: string
+  - name: amount
+    description: 'Amount: DEFINITION MISSING!'
+    data_type: double
+    tests:
+    - not_null
+  - name: unit_of_measure_code
+    description: 'Unit Of Measure Code: DEFINITION MISSING!'
+    data_type: string
+  - name: unit_of_measure_name
+    description: 'Unit Of Measure Name: DEFINITION MISSING!'
+    data_type: string
+  - name: processing_sequence
+    description: 'Processing Sequence: DEFINITION MISSING!'
+    data_type: string
+  - name: time_scale
+    description: 'Time Scale: DEFINITION MISSING!'
+    data_type: string
+  - name: is_active
+    description: 'Is Active: DEFINITION MISSING!'
+    data_type: boolean
+    tests:
+    - not_null
+  - name: exception_flag
+    description: 'Exception Flag: DEFINITION MISSING!'
+    data_type: int
+    tests:
+    - not_null
+  description: 'FACT: PHD Tag Processing Detail (from ER/Studio model `D3 - CDP L3-L4
+    LDM.DM1`): DEFINITION MISSING!'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - system_sk
+    - site_sk
+    - site_reporting_group_sk
+    - date_sk
+    - reporting_period_sk
+    - site_system_shift_date_sk
+    - asset_sk
+    - process_sk
+    - material_sk
+    - scenario_sk
+    - functional_location_sk
+    - department_sk
+    - received_dispatched_site_reporting_group_sk
+    - data_indicator_sk
+    - tag_code
+    - dictionary
+    - metric_code
+    - reading_date_time_utc
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

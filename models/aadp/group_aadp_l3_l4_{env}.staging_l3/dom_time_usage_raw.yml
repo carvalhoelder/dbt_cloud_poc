@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: dom_time_usage_raw
+  columns:
+  - name: dom_time_usage_raw_sk
+    description: 'DOM Time Usage Raw Key: The unique identifier for the DOM Time Usage
+      Raw in this system.  This is a surrogate key and no meaning should be inferred
+      from the content, although it may be used as a sort key to provide a natural
+      sort order for the DOM Time Usage Raw.'
+    data_type: string
+    constraints:
+    - type: not_null
+    config:
+      meta:
+        is_pk: true
+    tests:
+    - not_null
+  - name: source_system_name
+    description: 'Source System Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: site_name
+    description: 'Site Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: source_table_name
+    description: 'Source Table Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: reporting_date
+    description: 'Reporting Date: DEFINITION MISSING!'
+    data_type: date
+    tests:
+    - not_null
+  - name: source_asset_name
+    description: 'Source Asset Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: measure_name
+    description: 'Measure Name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: amount
+    description: 'Amount: DEFINITION MISSING!'
+    data_type: double
+  description: 'DOM Time Usage Raw (from ER/Studio model `D3 - CDP Cat MineStar Source.DM1`):
+    A daily asset material movement value measure for the mining processing model.'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - dom_time_usage_raw_sk
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001

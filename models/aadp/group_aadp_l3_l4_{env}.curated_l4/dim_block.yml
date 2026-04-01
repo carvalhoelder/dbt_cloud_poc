@@ -1,0 +1,51 @@
+version: 2
+models:
+- name: dim_block
+  columns:
+  - name: block_sk
+    description: 'block Key: DEFINITION MISSING!'
+    data_type: bigint
+    constraints:
+    - type: not_null
+    tests:
+    - not_null
+  - name: site_code
+    description: 'site_code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: site_name
+    description: 'site_name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: system_code
+    description: 'system_code: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: source_system_name
+    description: 'source_system_name: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: block
+    description: 'block: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  - name: _is_dbt
+    description: '_is_dbt: DEFINITION MISSING!'
+    data_type: string
+    tests:
+    - not_null
+  description: 'DIM: Block (from ER/Studio model `D3 - CDP L3-L4 LDM.DM1`): DEFINITION
+    MISSING!'
+  constraints:
+  - type: primary_key
+    columns: &id001
+    - block_sk
+  tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns: *id001
