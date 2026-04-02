@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "incremental",
+        schema='curated_l4',
         matched_condition = generate_matched_condition(['is_aborted', 'is_redrill', 'is_manual_meter', 'is_autonomous_meter', 'drilled_meters', 'drilling_duration', 'aborted_meters', 'exception_flag', 'is_active', 'is_one_touch_meter']) ,
         tags = ['incremental'],
         target_alias = "tgt",
@@ -52,6 +53,7 @@ SELECT
   d.is_one_touch_meter,
   sum(d.drilled_meters) AS drilled_meters,
   d.drilling_duration,
+  d.drilling_duration_rate,
   sum(d.aborted_meters) AS aborted_meters,
   TRUE AS is_active,
   0 AS exception_flag,
@@ -97,4 +99,5 @@ GROUP BY
   d.is_manual_meter,
   d.is_autonomous_meter,
   d.is_one_touch_meter,
-  d.drilling_duration 
+  d.drilling_duration,
+  d.drilling_duration_rate

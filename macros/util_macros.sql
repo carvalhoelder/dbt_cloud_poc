@@ -26,6 +26,9 @@
 {%- macro add_tech_columns(model_ref) -%}
 current_timestamp() AS __inserted_date
 ,current_timestamp() AS __modified_date
+,date_part('YEAR',current_timestamp()) AS __year
+,date_part('MONTH',current_timestamp()) AS __month
+,date_part('DAY',current_timestamp()) AS __day
 ,current_timestamp() AS curation_l3_ts
 ,current_timestamp() AS curation_l3_exec_ts
 ,'qvc_lx_dly' AS curation_l3_pipeline_name
