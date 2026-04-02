@@ -41,7 +41,8 @@ WITH drilling_data AS (
          NULL AS is_autonomous_meter,
          NULL AS is_one_touch_meter,
          drilled_meters,
-         NULL AS aborted_meters
+         NULL AS aborted_meters,
+         NULL AS drilling_duration_rate
     from {{ ref('surface_manager_drilling') }} AS A
    where A.__is_deleted = 'N'
 
@@ -62,7 +63,8 @@ WITH drilling_data AS (
          NULL AS is_autonomous_meter,
          NULL AS is_one_touch_meter,
          drilled_meters,
-         aborted_meters
+         aborted_meters,
+         NULL AS drilling_duration_rate
     from group_aadp_l3_l4_{{var('env')}}.staging_l3.rockma_drilling AS A
    where A.__is_deleted = 'N'
 
@@ -83,7 +85,8 @@ WITH drilling_data AS (
          NULL AS is_autonomous_meter,
          NULL AS is_one_touch_meter,
          drilled_meters,
-         NULL AS aborted_meters
+         NULL AS aborted_meters,
+         NULL AS drilling_duration_rate
     from group_aadp_l3_l4_{{var('env')}}.staging_l3.modular_dispatch_drilling AS A
    where A.__is_deleted = 'N'
 
@@ -104,7 +107,8 @@ WITH drilling_data AS (
          is_autonomous_meter,
          is_one_touch_meter,
          drilled_meters,
-         NULL AS aborted_meters
+         NULL AS aborted_meters,
+         drilling_duration_rate
     from group_aadp_l3_l4_{{var('env')}}.staging_l3.flanders_drilling AS A
    where A.__is_deleted = 'N'
 )
@@ -127,6 +131,7 @@ SELECT sl.site_id AS site_code,
        dd.drilled_meters,
        timestampdiff(SECOND, dd.start_time_drilling, dd.end_time_drilling) AS drilling_duration,
        dd.aborted_meters,
+       dd.drilling_duration_rate,
        {{add_tech_columns(this)}}
   from drilling_data AS dd
   JOIN group_aadp_l3_l4_{{var('env')}}.staging_l3.man_site_lookup AS sl
