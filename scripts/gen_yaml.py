@@ -88,16 +88,16 @@ def json_to_yaml(json_path: str, models_dir: str):
         if c.get("nullable") is False:
             tests.append("not_null")
 
-        # preserve pk/lc flags in meta
-        #meta = {'meta': {}}
-        #if c.get("is_pk"):
-        #    meta['meta']["is_pk"] = True
-        #    col["constraints"] = [{"type": "not_null"}]
-        #    # tests.append("unique")
-        #if c.get("is_lc"):
-        #    meta['meta']["is_lc"] = True
-        #if meta['meta']:
-        #    col["config"] = meta
+         preserve pk/lc flags in meta
+        meta = {'meta': {}}
+        if c.get("is_pk"):
+            meta['meta']["is_pk"] = True
+            col["constraints"] = [{"type": "not_null"}]
+            # tests.append("unique")
+        if c.get("is_lc"):
+            meta['meta']["is_lc"] = True
+        if meta['meta']:
+            col["config"] = meta
 
         if tests:
             col["tests"] = tests
