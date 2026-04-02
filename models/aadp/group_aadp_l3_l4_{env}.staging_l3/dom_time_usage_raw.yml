@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: dom_time_usage_raw
+    description: >
+      DOM Time Usage Raw (from ER/Studio model `D3 - CDP Cat MineStar Source.DM1`):
+      A daily asset material movement value measure for the mining processing model.
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - dom_time_usage_raw_sk
+
+    columns:
+      - name: dom_time_usage_raw_sk
+        description: >
+          Surrogate key for DOM Time Usage Raw. Unique identifier with no business meaning.
+        data_type: string
+        tests:
+          - not_null
+          - unique
+
+      - name: source_system_name
+        description: "Source system originating the data."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: site_name
+        description: "Site where the data was generated."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: source_table_name
+        description: "Source table name in the originating system."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: reporting_date
+        description: "Date of the reported metric."
+        data_type: date
+        tests:
+          - not_null
+
+      - name: source_asset_name
+        description: "Asset associated with the measurement."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: measure_name
+        description: "Name of the measured metric."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: amount
+        description: "Measured value."
+        data_type: double
