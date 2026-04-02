@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "incremental",
+        schema='curated_l3',
         matched_condition = generate_matched_condition(['site_name', 'source_system_name', 'is_aborted', 'is_redrill', 'is_manual_meter', 'is_autonomous_meter', 'is_one_touch_meter', 'drilled_meters', 'drilling_duration', 'aborted_meters']) ,
         tags = ['incremental'],
         target_alias = "tgt",
