@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "incremental",
+        schema='curated_l4',
         matched_condition = generate_matched_condition(['unit_of_measure_code', 'kda', 'amount']) ,
         tags = ['incremental'],
         target_alias = "tgt",

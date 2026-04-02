@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "incremental",
+        schema='curated_l4',
         matched_condition = generate_matched_condition(['system_sk', 'site_sk', 'site_reporting_group_sk', 'date_sk', 'site_system_shift_date_sk', 'asset_sk', 'process_sk', 'scenario_sk', 'material_sk', 'functional_location_sk', 'reporting_period_sk', 'department_sk', 'received_dispatched_site_reporting_group_sk', 'tag_code', 'tag_kda', 'metric_code', 'amount', 'unit_of_measure_code', 'unit_of_measure_name', 'reading_date_time_utc', 'reading_date_time_local', 'source_site_code', 'source_table_name', 'is_active', 'exception_flag']) ,
         tags = ['incremental'],
         target_alias = "tgt",

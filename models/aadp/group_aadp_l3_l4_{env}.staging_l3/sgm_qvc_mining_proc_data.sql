@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "incremental",
+        schema='staging_l3',
         matched_condition = generate_matched_condition(['source_table_name', 'source_system_name', 'site_name', 'reporting_date_month', 'asset_code', 'kda', 'material_code', 'measure_name', 'measure_code', 'measure_value']) ,
         tags = ['refresh'],
         target_alias = "tgt",

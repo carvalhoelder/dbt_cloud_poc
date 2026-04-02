@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "incremental",
+        schema='curated_l4',
         matched_condition = generate_matched_condition(['measure_value', 'is_active', 'exception_flag']) ,
         tags = ['refresh'],
         target_alias = "tgt",
