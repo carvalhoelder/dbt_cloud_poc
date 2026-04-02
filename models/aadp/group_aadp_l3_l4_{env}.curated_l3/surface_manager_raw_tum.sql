@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "table",
+        schema='curated_l3',
         tags = ['overwrite'],
         target_alias = "tgt",
         source_alias = "src", 

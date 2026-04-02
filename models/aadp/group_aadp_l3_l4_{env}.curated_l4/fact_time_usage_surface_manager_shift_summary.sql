@@ -5,6 +5,7 @@
 {{
     config(
         materialized = "incremental",
+        schema='curated_l4',
         matched_condition = generate_matched_condition(['t000', 't100', 't200', 't300', 'p100', 'p200', 'l000', 'l100', 'l200', 'l300', 'd000', 'd100', 'd200', 'd300', 'n000', 'n100', 'n200', 'stop_count', 'd100_event_count', 'is_active', 'exception_flag']) ,
         tags = ['incremental'],
         target_alias = "tgt",
