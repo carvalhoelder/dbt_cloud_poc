@@ -1,0 +1,155 @@
+version: 2
+
+models:
+  - name: dbt_test  # replace with actual model filename
+    description: >
+      Date dimension table generated dynamically from 2026-01-01 through end of next year.
+      Provides calendar attributes for analytics, reporting, and time-based aggregations.
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - dbt_test_sk
+
+    columns:
+      - name: dbt_test_sk
+        description: >
+          Surrogate key for the date in YYYYMMDD format (e.g., 20260101).
+        data_type: int
+        tests:
+          - not_null
+          - unique
+
+      - name: date
+        description: "Calendar date."
+        data_type: date
+        tests:
+          - not_null
+          - unique
+
+      - name: year
+        description: "Year component of the date."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: start_of_year
+        description: "First day of the year."
+        data_type: date
+        tests:
+          - not_null
+
+      - name: end_of_year
+        description: "Last day of the year."
+        data_type: date
+        tests:
+          - not_null
+
+      - name: month
+        description: "Month number (1-12)."
+        data_type: int
+        tests:
+          - not_null
+          - accepted_values:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property. 
+                values: [1,2,3,4,5,6,7,8,9,10,11,12]
+
+      - name: start_of_month
+        description: "First day of the month."
+        data_type: date
+        tests:
+          - not_null
+
+      - name: end_of_month
+        description: "Last day of the month."
+        data_type: date
+        tests:
+          - not_null
+
+      - name: days_in_month
+        description: "Number of days in the month."
+        data_type: int
+        tests:
+          - not_null
+          - accepted_values:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property. 
+                values: [28,29,30,31]
+
+      - name: year_month_number
+        description: "Year and month in YYYYMM format."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: year_month_name
+        description: "Year and abbreviated month name (e.g., 2026-Jan)."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: day
+        description: "Day of the month."
+        data_type: int
+        tests:
+          - not_null
+          - accepted_values:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property. 
+                values: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+
+      - name: day_name
+        description: "Full name of the day (e.g., Monday)."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: day_name_short
+        description: "Short name of the day (e.g., Mon)."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: day_of_year
+        description: "Day number within the year (1-366)."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: month_name
+        description: "Full month name."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: month_name_short
+        description: "Abbreviated month name."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: quarter
+        description: "Quarter number (1-4)."
+        data_type: int
+        tests:
+          - not_null
+          - accepted_values:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property. 
+                values: [1,2,3,4]
+
+      - name: quarter_name
+        description: "Quarter label (e.g., Q1)."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: year_quarter_number
+        description: "Year and quarter in numeric format (e.g., 20261)."
+        data_type: int
+        tests:
+          - not_null
+
+      - name: year_quarter_name
+        description: "Year and quarter label (e.g., 2026Q1)."
+        data_type: string
+        tests:
+          - not_null
